@@ -1,0 +1,32 @@
+<html>
+    <body class="text-center" style="background-color:rgb(196, 209, 209); font-size:30px">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:25px">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="container">
+            <form method="POST" class="form-signin">
+                {{ form.hidden_tag() }}
+                <h1>Signin</h1>
+                {{ form.username.label() }}
+                {{ form.username(class="form-control", placeholder="User Name") }}
+                <br>
+                <br>
+                {{ form.password.label() }}
+                {{ form.password(class="form-control", placeholder="Password") }}
+                <br>
+                <br>
+                <div class="checkbox mb-3">
+                    Do not have an account? <a href="{{ url_for('register_page') }}">SignUp</a>
+                </div>
+                <br>
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            </form>
+        </div>
+    </body>
+</html>
