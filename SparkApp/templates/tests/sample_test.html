@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type = "text/javascript" >  
+            function preventBack() { window.history.forward(); }  
+            setTimeout("preventBack()", 0);  
+            window.onunload = function () { null };  
+        </script> 
+    </head>
+    <body style="background-color:rgb(196, 209, 209); font-size:25px">
+        <form method="POST", action="">
+            <h4>
+                Answer the following questions with a value ranging from 1 to 10 <br>
+                where 1 = "less likey to" and 10 = "more likely to" 
+            </h4>
+            {{ form.hidden_tag() }}
+            I am able to meet deadlines without rushing
+            <br>
+            {{ form.a1(class="form-control",size="1") }}
+            <br>
+            <br>
+            How well can you evaluate a situation and identify the reason? 
+            <br>
+            {{ form.a2(class="form-control",size="1") }}
+            <br>
+            <br>
+            I accept others statements and claims without questioning it.
+            <br>
+            {{ form.a3(class="form-control",size="1") }}
+            <br>
+            <br>
+            How well can you describe an event or situation?
+            <br>
+            {{ form.a4(class="form-control",size="1") }}
+            <br>
+            <br>
+            Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.
+            <br>
+            {{ form.a5(class="form-control",size="1") }}
+            <br>
+            <br>
+            I look for things in my environment to inspire me to find new interpretations of problems.
+            <br>
+            {{ form.a6(class="form-control",size="1") }}
+            <br>
+            <br>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+        <a href="{{ url_for('login_page') }}"><h4 style="text-align:center;">Signout</h4></a>
+    </body> 
+</html>
