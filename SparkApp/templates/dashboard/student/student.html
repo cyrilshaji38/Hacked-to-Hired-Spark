@@ -1,6 +1,20 @@
 <html>
+    <head>
+        <script type = "text/javascript" >  
+            function preventBack() { window.history.forward(); }  
+            setTimeout("preventBack()", 0);  
+            window.onunload = function () { null };  
+        </script>
+        <title>Test</title> 
+    </head>
     <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+        <a href="{{ url_for('login_page') }}"><h4 style="text-align:right;">SIGN OUT</h4></a>
         <h1>Welcome Student!</h1>
         <a href="{{ url_for('test_page') }}">Take a test</a>
+        <br>
+        <br>
+        Username: {{ current_user.username }}
+        <br>
+        Email id: {{ current_user.email }}
     </body>
 </html>
