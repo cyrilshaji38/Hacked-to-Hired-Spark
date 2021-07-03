@@ -1,8 +1,6 @@
 from typing import AnyStr
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.fields.core import SelectField
-from wtforms.validators import DataRequired
+from wtforms import SubmitField, SelectField
 
 
 class Answers(FlaskForm):   # Form for the test paper page.

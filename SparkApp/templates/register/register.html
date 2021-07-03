@@ -17,37 +17,34 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <div class="container">
+        <div style="text-align: center;" class="container">
             <form method="POST" class="form-register">
                 {{ form.hidden_tag() }}
-                <h1>Signup</h1>
-                {{ form.username.label() }}
+                <h1>SIGN UP</h1>
                 {{ form.username(class="form-control", placeholder="Username") }}
                 <br>
                 <br>
-                {{ form.email.label() }}
-                {{ form.email(class="form-control", placeholder="Email") }}
+                {{ form.email(class="form-control", placeholder="Email address") }}
                 <br>
                 <br>
-                {{ form.mobile.label() }}
-                {{ form.mobile(class="form-control", placeholder="optional") }}
+                {{ form.mobile(class="form-control", placeholder="Mobile number (optional)") }}
                 <br>
                 <br>
-                {{ form.password.label() }}
                 {{ form.password(class="form-control", placeholder="Password") }}
                 <br>
                 <br>
-                {{ form.password2.label() }}
                 {{ form.password2(class="form-control", placeholder="Confirm Password") }}
                 <br>
                 <br>
                 {{ form.acctype.label }}
                 {{ form.acctype }}
+                <br>
+                <br>
                 {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
                 <br>
                 <br>
                 <div class="checkbox mb-3">
-                    Already have an account? <a href="{{ url_for('login_page') }}">Signin</a>
+                    Already have an account? <a href="{{ url_for('login_page') }}">SIGN IN</a>
                 </div>
             </form>
         </div>

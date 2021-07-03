@@ -8,4 +8,4 @@ class SigninForm(FlaskForm):   # Form for login page.
     style1={'style': 'font-size: 20px', 'readonly': True}
     username = StringField(label='Username:', validators=[DataRequired()],render_kw=style)
     password = PasswordField(label='Password:', validators=[DataRequired()],render_kw=style)
-    submit = SubmitField(label='Sign in',render_kw=style1)
+    submit = SubmitField(label='SIGN IN',render_kw=style1)
