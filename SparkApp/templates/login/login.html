@@ -1,5 +1,8 @@
 <html>
-    <body class="text-center" style="background-color:rgb(196, 209, 209); font-size:30px">
+    <head>
+        <title>Login</title> 
+    </head>
+    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:30px">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
