@@ -7,45 +7,39 @@
         </script>
         <title>Test</title> 
     </head>
-    <body style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:25px ">
+    <body style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px ">
+        <a href="{{ url_for('login_page') }}"><h4 style="text-align:right;">Signout</h4></a>
         <form method="POST", action="">
             <h4>
                 Answer the following questions with a value ranging from 1 to 10 <br>
                 where 1 = "less likey to" and 10 = "more likely to" 
             </h4>
             {{ form.hidden_tag() }}
-            I am able to meet deadlines without rushing
-            <br>
-            {{ form.a1(class="form-control",size="1") }}
-            <br>
-            <br>
-            How well can you evaluate a situation and identify the reason? 
-            <br>
-            {{ form.a2(class="form-control",size="1") }}
+            I am able to meet deadlines without rushing.&nbsp;
+            {{ form.a1(class="form-control") }}
             <br>
             <br>
-            I accept others statements and claims without questioning it.
-            <br>
-            {{ form.a3(class="form-control",size="1") }}
-            <br>
-            <br>
-            How well can you describe an event or situation?
-            <br>
-            {{ form.a4(class="form-control",size="1") }}
+            How well can you evaluate a situation and identify the reason?&nbsp;
+            {{ form.a2(class="form-control") }}
             <br>
             <br>
-            Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.
+            I accept others statements and claims without questioning it.&nbsp;
+            {{ form.a3(class="form-control") }}
             <br>
-            {{ form.a5(class="form-control",size="1") }}
+            <br>
+            How well can you describe an event or situation?&nbsp;
+            {{ form.a4(class="form-control") }}
             <br>
             <br>
-            I look for things in my environment to inspire me to find new interpretations of problems.
+            Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.&nbsp;
+            {{ form.a5(class="form-control") }}
             <br>
-            {{ form.a6(class="form-control",size="1") }}
+            <br>
+            I look for things in my environment to inspire me to find new interpretations of problems.&nbsp;
+            {{ form.a6(class="form-control") }}
             <br>
             <br>
             {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
         </form>
-        <a href="{{ url_for('login_page') }}"><h4 style="text-align:center;">Signout</h4></a>
     </body> 
 </html>
