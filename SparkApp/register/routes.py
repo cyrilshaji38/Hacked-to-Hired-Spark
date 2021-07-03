@@ -9,7 +9,7 @@ from flask_login import login_user
 def register_page():
     form2 = SignupForm()
     if form2.validate_on_submit():
-        user_to_create = User(username=form2.username.data,email=form2.email.data,epassword=form2.password.data,acctype=form2.acctype.data)   
+        user_to_create = User(username=form2.username.data,email=form2.email.data,mobile=form2.mobile.data,epassword=form2.password.data,acctype=form2.acctype.data)   
         db.session.add(user_to_create)   # Adds new user to database.
         db.session.commit()
         login_user(user_to_create)
