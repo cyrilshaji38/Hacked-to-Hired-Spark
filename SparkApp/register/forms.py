@@ -16,7 +16,7 @@ class SignupForm(FlaskForm):   # Form for register page.
             raise ValidationError('Email Address already exists! Please try a different email address')
 
     style={'style': 'font-size: 20px'}
-    style1={'style': 'font-size: 30px', 'readonly': True}
+    style1={'style': 'font-size: 20px', 'readonly': True}
     username = StringField(label='Username:', validators=[Length(min=2, max=30), DataRequired()],render_kw=style)
     email = StringField(label='Email id:', validators=[Email(), DataRequired()],render_kw=style)
     mobile = StringField(label='Mobile No:', validators=[Length(min=10, max=10)],render_kw=style)
