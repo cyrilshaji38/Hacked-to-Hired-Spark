@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script type = "text/javascript" >  
+            function preventBack() { window.history.forward(); }  
+            setTimeout("preventBack()", 0);  
+            window.onunload = function () { null };  
+        </script>
+        <title>Welcome Teacher</title> 
+    </head>
+    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+        <a href="{{ url_for('logout') }}"><h4 style="text-align:right;">SIGN OUT</h4></a>
+        <h1>Welcome Teacher!</h1>
+        <img src="{{ profile }}">
+        <br>
+        Username: {{ current_user.username }}
+        <br>
+        Email id: {{ current_user.email }}
+        <br>
+        <br>
+        <a href="">Monitor your students</a>
+    </body>
+</html>

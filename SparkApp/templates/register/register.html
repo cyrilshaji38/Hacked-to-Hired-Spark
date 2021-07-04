@@ -18,7 +18,7 @@
             {% endif %}
         {% endwith %}
         <div style="text-align: center;" class="container">
-            <form method="POST" class="form-register">
+            <form method="POST" class="form-register" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
                 <h1>SIGN UP</h1>
                 {{ form.username(class="form-control", placeholder="Username") }}
@@ -28,6 +28,9 @@
                 <br>
                 <br>
                 {{ form.mobile(class="form-control", placeholder="Mobile number (optional)") }}
+                <br>
+                <br>
+                {{ form.profile() }}
                 <br>
                 <br>
                 {{ form.password(class="form-control", placeholder="Password") }}

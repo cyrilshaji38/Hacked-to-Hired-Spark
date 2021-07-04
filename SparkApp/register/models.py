@@ -1,3 +1,4 @@
+from enum import unique
 from SparkApp import db, bcrypt, login_manager
 from flask_login import UserMixin
 
@@ -12,6 +13,7 @@ class User(db.Model, UserMixin):   # Table in database with all registered user'
     username = db.Column(db.String(length=30), nullable=False, unique=True)
     email = db.Column(db.String(length=50), nullable=False, unique=True)
     mobile = db.Column(db.String(length=10), nullable=True, unique=False)
+    profile = db.Column(db.String(20), nullable=False, default='default.png')
     password = db.Column(db.String(length=60), nullable=False)
     acctype = db.Column(db.Integer(), nullable=False)
 
