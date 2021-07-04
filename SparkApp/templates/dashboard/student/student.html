@@ -1,10 +1,5 @@
 <html>
     <head>
-        <script type = "text/javascript" >  
-            function preventBack() { window.history.forward(); }  
-            setTimeout("preventBack()", 0);  
-            window.onunload = function () { null };  
-        </script>
         <title>Welcome Student</title> 
     </head>
     <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
@@ -17,6 +12,6 @@
         Email id: {{ current_user.email }}
         <br>
         <br>
-        <a href="{{ url_for('test_page') }}">Take a test</a>
+        <a href="{{ url_for('assesment_page') }}">Take a test</a>
     </body>
 </html>

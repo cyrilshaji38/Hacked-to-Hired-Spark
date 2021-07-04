@@ -15,6 +15,6 @@ login_manager = LoginManager(app)
 from SparkApp.login import routes
 from SparkApp.register import routes
 from SparkApp.skills import routes
-from SparkApp.tests import routes
+from SparkApp.assesment import routes
 from SparkApp.dashboard.student import routes
 from SparkApp.dashboard.teacher import routes
