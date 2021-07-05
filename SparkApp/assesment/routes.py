@@ -1,11 +1,11 @@
 from flask import render_template, redirect, url_for
 from SparkApp.skills import analyze_skill
-from SparkApp.tests.forms import Answers
+from SparkApp.assesment.forms import Answers
 from SparkApp import app
 
 
-@app.route("/test",methods = ['GET','POST'])
-def test_page():
+@app.route("/assesment",methods = ['GET','POST'])
+def assesment_page():
     form3 = Answers()
     form3.ans_list = [[form3.a1.data,form3.a2.data,form3.a3.data,form3.a4.data,form3.a5.data,form3.a6.data]]
     if form3.validate_on_submit():
@@ -14,4 +14,4 @@ def test_page():
             return redirect(url_for('critical_thinking_page'))   # Redirect user to page with game for improving critical thinking skills.
         else:
             return redirect(url_for('communication_page'))   # Redirect user to page with game for improving communication skills.
-    return render_template('tests/sample_test.html', form=form3)
+    return render_template('assesment/sample_assesment.html', form=form3)
