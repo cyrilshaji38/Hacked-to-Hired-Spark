@@ -21,7 +21,27 @@ Teacher Login
         Email id: {{ current_user.email }}
         <br>
         <br>
-        <a href="">Monitor your students</a>
+        <form method="POST" class="form-signin">
+            {{ form.hidden_tag() }}
+            <h2>Your students:</h2>
+            <script>i=0</script>
+            {% for students in my_students %}
+                <script>i=i+1; document.write(i+")");</script>
+                <a href="">{{ students.username }}</a><br><br>
+            {% endfor %}
+            <b>Add new student: </b>
+            {{ form.username(class="form-control", placeholder="Student's username") }}
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </form>
     </body>
     <style>
         .text-center{
