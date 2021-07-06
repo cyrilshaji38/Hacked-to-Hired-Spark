@@ -1,39 +1,64 @@
-<html>
+{% extends 'base.html' %}
+
+{% block content %}
     <head>
         <title>Test</title> 
     </head>
-    <body style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px ">
-        <form method="POST", action="">
+    <div style="text-align: left;background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px" class="container">
+    
+        <form method="POST", action="" , class="assesment">
             <h4>
                 Answer the following questions with a value ranging from 1 to 10 <br>
                 where 1 = "less likey to" and 10 = "more likely to" 
             </h4>
             {{ form.hidden_tag() }}
             I am able to meet deadlines without rushing.&nbsp;
-            {{ form.a1(class="form-control") }}
+            {{ form.a1(class="form-control-lg") }}
             <br>
             <br>
             How well can you evaluate a situation and identify the reason?&nbsp;
-            {{ form.a2(class="form-control") }}
+            {{ form.a2(class="form-control-lg") }}
             <br>
             <br>
             I accept others statements and claims without questioning it.&nbsp;
-            {{ form.a3(class="form-control") }}
+            {{ form.a3(class="form-control-lg") }}
             <br>
             <br>
             How well can you describe an event or situation?&nbsp;
-            {{ form.a4(class="form-control") }}
+            {{ form.a4(class="form-control-lg") }}
             <br>
             <br>
             Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.&nbsp;
-            {{ form.a5(class="form-control") }}
+            {{ form.a5(class="form-control-lg") }}
             <br>
             <br>
             I look for things in my environment to inspire me to find new interpretations of problems.&nbsp;
-            {{ form.a6(class="form-control") }}
+            {{ form.a6(class="form-control-lg") }}
             <br>
             <br>
-            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            {{ form.submit(class="btn-lg  btn-primary") }}
         </form>
     </body> 
-</html>
+
+    <style>
+        body {
+          background-color: #212121;
+          color: black;
+        }
+        .container{
+            padding-top: 3em;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 600x;
+            background:white;
+            border-radius: 10px;
+        }
+        
+        .assesment{
+            color: black;
+        }
+
+    </style>
+{% endblock %}
