@@ -15,7 +15,9 @@
         <form method="POST" class="form-signin">
             {{ form.hidden_tag() }}
             <h2>Your students:</h2>
+            <script>i=0</script>
             {% for students in my_students %}
+                <script>i=i+1; document.write(i+")");</script>
                 <a href="">{{ students.username }}</a><br><br>
             {% endfor %}
             <b>Add new student: </b>
