@@ -1,4 +1,6 @@
-<html>
+{% extends 'base.html' %}
+
+{% block content %}
     <head>
         <script type = "text/javascript" >  
             function preventBack() { window.history.forward(); }  
@@ -20,30 +22,36 @@
         <div style="text-align: center;" class="container">
             <form method="POST" class="form-register" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
-                <h1>SIGN UP</h1>
-                {{ form.username(class="form-control", placeholder="Username") }}
+                <h2>SIGN UP</h2>
+                {{ form.username(class="form-control-lg", placeholder="Username") }}
                 <br>
                 <br>
-                {{ form.email(class="form-control", placeholder="Email address") }}
+                {{ form.email(class="form-control-lg", placeholder="Email address") }}
                 <br>
                 <br>
-                {{ form.mobile(class="form-control", placeholder="Mobile number (optional)") }}
+                
+                {{ form.mobile(class="form-control-lg", placeholder="Mobile number (optional)") }}
+                
+                <br>
+                 <br> 
+                <div class="profile-pic">
+                    
+                    Profile Picture:
+                    {{ form.profile(class="form-control-lg", placeholder="Password") }} 
+                </div>
+                <br>
+                
+                {{ form.password(class="form-control-lg", placeholder="Password") }}
                 <br>
                 <br>
-                {{ form.profile() }}
-                <br>
-                <br>
-                {{ form.password(class="form-control", placeholder="Password") }}
-                <br>
-                <br>
-                {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+                {{ form.password2(class="form-control-lg", placeholder="Confirm Password") }}
                 <br>
                 <br>
                 {{ form.acctype.label }}
                 {{ form.acctype }}
                 <br>
                 <br>
-                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                {{ form.submit(class="btn-lg ") }}
                 <br>
                 <br>
                 <div class="checkbox mb-3">
@@ -52,4 +60,49 @@
             </form>
         </div>
     </body>
-</html>
+
+    <style>
+        body {
+        
+          background-color: #212121;
+          color: black;
+          height: 200vh;
+        }
+        .container
+        {
+            
+            position: absolute;
+            top: 70%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            background:white;
+            border-radius: 10px;
+        }
+        form.form-register{
+            position: relative;
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+            color: black;
+        }
+        .profile-pic{
+            text-align:left ;
+            color:#353535;
+            
+        }
+        
+        
+        .form-register input{
+            padding-top: 3em;
+            width: 100%;
+            padding: 0 5px;
+            height: 50px;
+            font-size: 16px;
+            border: none;
+            background: none;
+            outline: none;
+            border-bottom: 1px solid silver;
+        }
+        
+    </style>
+    {% endblock %}
