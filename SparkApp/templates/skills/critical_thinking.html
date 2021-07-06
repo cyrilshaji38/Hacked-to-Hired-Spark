@@ -1,13 +1,25 @@
-<html>
+{% extends 'base.html' %}
+
+{% block content %}
     <head>
         <title>Game</title> 
     </head>
-    <body style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+        <br>
        <h2>Game to improve critical thinking skills</h2>
+       <br>
        Here is a demo game for improving your critical thinking skills:
        <br>
-       
+       <br>
        <iframe frameborder="0" src="https://itch.io/embed-upload/4115364?color=333333" allowfullscreen="" width="962" height="662"><a href="https://nikimathew.itch.io/critical-thinking">Play Critical Thinking on itch.io</a></iframe>
        
     </body> 
-</html>
+    <style>
+        
+        .text-center
+        {
+            
+            color: black;
+        }
+    </style>
+    {% endblock %}
