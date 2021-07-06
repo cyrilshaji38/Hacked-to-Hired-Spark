@@ -34,3 +34,6 @@ class Students(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(length=30), nullable=True, unique=True)
     teacher = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    
+    def __repr__(self):
+        return f'Students {self.username}'

@@ -15,7 +15,9 @@
         <form method="POST" class="form-signin">
             {{ form.hidden_tag() }}
             <h2>Your students:</h2>
-            <br>
+            {% for students in my_students %}
+                <a href="">{{ students.username }}</a><br><br>
+            {% endfor %}
             <b>Add new student: </b>
             {{ form.username(class="form-control", placeholder="Student's username") }}
             {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
