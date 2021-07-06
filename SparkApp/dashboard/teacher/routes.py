@@ -1,3 +1,4 @@
+from flask.helpers import flash
 from SparkApp.register.models import Students
 from SparkApp.dashboard.teacher.forms import AddStudentForm
 from flask import render_template, url_for
@@ -16,13 +17,13 @@ def teacher_page():
         if form4.validate_on_submit():
             if User.query.filter_by(username=form4.username.data).first():
                 if Students.query.filter_by(username=form4.username.data).first():
-                    print("already assigned a teacher!")
+                    flash("Student already assigned to a teacher!", category='danger')
                 else:
                     student_to_add = Students(username=form4.username.data,teacher=current_user.id)
                     db.session.add(student_to_add)
                     db.session.commit()
             else:
-                print("no such student")
+                flash("No such student!", category='danger')
         return render_template('dashboard/teacher/teacher.html', profile=profile, form=form4, my_students=my_students)
     else:
         return redirect(url_for('login_page'))

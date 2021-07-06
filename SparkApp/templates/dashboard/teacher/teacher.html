@@ -23,6 +23,15 @@
             <b>Add new student: </b>
             {{ form.username(class="form-control", placeholder="Student's username") }}
             {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         </form>
     </body>
 </html>
