@@ -2,6 +2,17 @@
 {% block title %}
 Student Login
 {% endblock %}
+{% block buttons %}
+<div class="collapse navbar-collapse" id="navbarNav">   
+    <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+        </li>
+    </ul>
+  </div>
+
+{% endblock %}
 {% block content %}
 <head>
   <meta charset="utf-8">

@@ -2,6 +2,18 @@
 {% block title %}
 Teacher Login
 {% endblock %}
+{% block buttons %}
+<div class="collapse navbar-collapse" id="navbarNav">
+   
+    <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+        </li>
+    </ul>
+  </div>
+
+{% endblock %}
 {% block content %}
 
 <head>
@@ -15,7 +27,7 @@ Teacher Login
     <h2>Welcome Teacher!</h2>
     <div class="content">
         <div class="card">
-            <h2>Your students:</h2>
+            <h3>Your students:</h3><br>
             <form method="POST" class="form-signin">
                 {{ form.hidden_tag() }}
                 <script>i=0</script>
@@ -23,9 +35,12 @@ Teacher Login
                     <script>i=i+1; document.write(i+")");</script>
                     <a href="">{{ students.username }}</a><br><br>
                 {% endfor %}
-                <b>Add new student: </b>
-                {{ form.username(class="form-control", placeholder="Student's username") }}
-                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                <div style="font-size: 19px;">
+                    Add new student:
+                    {{ form.username(class="form-control-lg", placeholder="Student's username") }}
+                    {{ form.submit(class="btn-lg btn-primary") }}
+                </div>               
+                <br>
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         {% for category, message in messages %}
@@ -105,9 +120,11 @@ Teacher Login
         }
 
     .content{
+        
         width: (100% - 250px);
         margin-top: 80px;
-        padding: 20px;
+        padding: 50px;
+        padding-right: 35em;
         margin-left: 250px;
         background: url(background.png) no-repeat;
         background-position: center;
@@ -115,8 +132,9 @@ Teacher Login
         height: 100vh;
         transition: 0.5s;
         }
-
+    
     .content .card {
+        text-align: left;
         background: #fff;
         padding: 25px;
         margin-bottom: 10px;
