@@ -13,20 +13,18 @@
       </title>
    </head>
    <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Spark App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      {% block buttons %}
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">Spark App</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         {% block buttons %}
 
-      {% endblock %}
-   
-    </nav>
+         {% endblock %}
+      </nav>
       {% block content %}
           <!-- Future Content here -->
-      {% endblock %}
-      
+      {% endblock %}  
 
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src='https://kit.fontawesome.com/a076d05399.js'></script>

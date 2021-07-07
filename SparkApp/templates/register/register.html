@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% block buttons %}
-<div class="collapse navbar-collapse" id="navbarNav">
-   
-    <ul class="navbar-nav ml-auto">
-        
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('login_page') }}">SIGN IN</a>
-        </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarNav">    
+        <ul class="navbar-nav ml-auto">            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login_page') }}">SIGN IN</a>
+            </li>
+        </ul>
+    </div>
 
 {% endblock %}
 {% block content %}
@@ -67,18 +65,13 @@
             </form>
         </div>
     </body>
-
     <style>
-        body {
-        
+        body {        
           background-color: #212121;
           color: black;
           height: 200vh;
-        }
-        
-        .container
-        {
-            
+        }        
+        .container{          
             position: absolute;
             top: 70%;
             left:50%;
@@ -95,10 +88,8 @@
         }
         .profile-pic{
             text-align:left ;
-            color:#353535;
-            
-        }
-        
+            color:#353535;            
+        }      
         
         .form-register input{
             padding-top: 3em;
@@ -112,4 +103,4 @@
         }
         
     </style>
-    {% endblock %}
+{% endblock %}
