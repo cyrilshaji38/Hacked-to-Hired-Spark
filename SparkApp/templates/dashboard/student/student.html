@@ -18,16 +18,35 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">      
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
     </head>
-    <body class="text" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+    <body class="text" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px;">
         <h2>
             Welcome Student!
         </h2>
         <div class="content">
             <div class="card">            
-                <a href="{{ url_for('assesment_page') }}">Take a test</a>
+                <a href="{{ url_for('assesment_page') }}"><h5><u>Take a test</u></h5></a>
+                <br>
+                <div>
+                    <p style="font-size: 18px; color: #107bf7;" id="skills_menu" onclick="more_skills()"><u>All Games</u></p>
+                    <ul id="skills_menu-box" style="display: block; list-style-type: none;" >
+                        <li>
+                            <p id="games_menu" style="color: #107bf7;" onclick="more_games()"><u>Critical Thinking</u></p>
+                            <ul id="games_menu-box" style="display: block; list-style-type: none;">
+                                <li>
+                                    <a href="{{ url_for('communication_page') }}">Rainy Day</a>
+                                </li>
+                                <br>
+                            </ul>
+                            <p><u>Communication</u> (More games coming soon...)</p>
+                            <p><u>Creativity and Imagination</u> (More games coming soon...)</p>
+                            <p><u>Problem Solving</u> (More games coming soon...)</p>
+                            <p><u>Teamwork</u> (More games coming soon...)</p>
+                            <p><u>Adaptibility</u> (More games coming soon...)</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-            
         <div class="sidebar">
             <div class="profile_info">
                 <img src="{{ profile }}" class="mobile_profile_image" style="height:150px;width:150px;">
@@ -39,6 +58,27 @@
             </div>
         </div>
     </body>
+
+    <script>
+        function more_skills() {
+            var menuBox = document.getElementById('skills_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+        function more_games() {
+            var menuBox = document.getElementById('games_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+    </script>
             
     <style>
 
@@ -58,7 +98,7 @@
         }
             
         .text{
-            text-align: center;
+            text-align: left;
             background-color: #212121;
             color: black;
             }
