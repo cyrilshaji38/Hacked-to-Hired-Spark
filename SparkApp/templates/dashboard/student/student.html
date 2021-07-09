@@ -21,6 +21,7 @@
     <body class="text" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
         <h2>
             Welcome Student!
+            
         </h2>
         <div class="content">
             <div class="card">            
@@ -30,7 +31,7 @@
             
         <div class="sidebar">
             <div class="profile_info">
-                <img src="{{ profile }}" class="mobile_profile_image" style="height:150px;width:150px;">
+                <img src="{{ profile }}" class="mobile_profile_image" style="height:175px;width:175px;">
             </div>
             <div class="profile-text">
                 <br>
@@ -46,33 +47,39 @@
             z-index: 1;
             top: 0;
             background: #30333b;
-            margin-top: 55px;
+            margin-top: 0px;
             padding-top: 1px;
             position: fixed;
             left: 0;
-            width: 250px;
+            width: 325px;
             height: 100%;
             transition: 0.5s;
             transition-property: left;
             overflow-y: auto;
+            z-index:100;
+            
         }
             
         .text{
+
+            padding-top: 2em;
             text-align: center;
             background-color: #212121;
             color: black;
             }
         .text h2{
-            padding-top: 1em;
+            padding-top: 2em;
+            padding-left: 3em;
             position: absolute;
             left: 278px;        
             height: 120px;
-            text-align: left;      
+            text-align: left; 
+                  
 
         }
 
         .profile_info{
-            padding-top: 3em;   
+            padding-top: 7em;   
             display: flex;
             flex-direction: column;
             justify-content: left;  
@@ -88,16 +95,20 @@
 
         .sidebar .profile_info .profile_image{
         
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 100px;
             margin-bottom: 10px;
         }
 
         .content{
+            
             width: (100% - 250px);
+            padding-top: 7em;
+            padding-right: 5em;
+            padding-left: 10em;
             margin-top: 80px;
-            padding: 20px;
+            
             margin-left: 250px;
             background: url(background.png) no-repeat;
             background-position: center;
@@ -107,6 +118,7 @@
         }
 
         .content .card {
+            padding-top: 4em;
             background: #fff;
             padding: 25px;
             margin-bottom: 10px;
