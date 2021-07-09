@@ -1,29 +1,34 @@
 {% extends 'base.html' %}
-{% block buttons %}
-    <div class="collapse navbar-collapse" id="navbarNav">    
-        <ul class="navbar-nav ml-auto">            
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login_page') }}">SIGN IN</a>
-            </li>
-        </ul>
-    </div>
 
-{% endblock %}
-{% block content %}
-    <head>
-        <title>Register</title> 
-    </head>
-    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px" >
+    {% block head %}
+
+        <title>Register</title>
+
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">    
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login_page') }}">SIGN IN</a>
+                </li>
+            </ul>
+        </div>
+        
+    {% endblock %}
+
+    {% block content %}
+
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:20px">
+                    <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:20px; text-align: center;">
                         {{ message }}
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        
         <div style="text-align: center;" class="container">
             <form method="POST" class="form-register" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
@@ -60,48 +65,49 @@
                 </div>
             </form>
         </div>
-    </body>
-    <style>
-        body {        
-          background-color: #212121;
-          color: black;
-          height: 120vh;
-        }        
-        .container{          
+
+    {% endblock %}
+    
+    {% block style %}
+
+        <style>
+            .container{          
+                
+                position: relative;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                top:30px;
+                bottom: 30px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 400px;
+                background:white;
+                border-radius: 10px;
+            }
+
+            form.form-register{
+                position: relative;
+                border-bottom: 2px;
+                margin: 30px;
+                color: black;
+            }
+
+            .profile-pic{
+                text-align:left ;
+                color:#353535;            
+            }      
             
-            position: relative;
-            padding-top: 1em;
-            padding-bottom: 1em;
-            top:30px;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-  	        margin: auto;
-            width: 400px;
-            background:white;
-            border-radius: 10px;
-        }
-        form.form-register{
-            position: relative;
-            border-bottom: 2px;
-            margin: 30px;
-            color: black;
-        }
-        .profile-pic{
-            text-align:left ;
-            color:#353535;            
-        }      
-        
-        .form-register input{
-            padding-top: 3em;
-            width: 100%;
-            padding: 0 5px;
-            height: 50px;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            border-bottom: 1px solid silver;
-        }
-        
-    </style>
-{% endblock %}
+            .form-register input{
+                padding-top: 3em;
+                width: 100%;
+                padding: 0 5px;
+                height: 50px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid silver;
+            }
+        </style>
+
+    {% endblock %}

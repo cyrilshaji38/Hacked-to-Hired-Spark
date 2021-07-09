@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
-{% block title %}
-    Teacher Login
-{% endblock %}
-{% block buttons %}
-    <div class="collapse navbar-collapse" id="navbarNav">    
-        <ul class="navbar-nav ml-auto">            
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
-            </li>
-        </ul>
-    </div>
 
-{% endblock %}
-{% block content %}
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block head %}
+    
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">      
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+        <title>Teacher</title>          
 
-    <body class="text" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">    
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+
         <h2>Welcome Teacher!</h2>
         <div class="content">
             <div class="card">
@@ -52,7 +53,7 @@
         </div>        
         <div class="sidebar">
             <div class="profile_info">
-            <img src="{{ profile }}" class="mobile_profile_image" style="height:175px;width:175px;">
+            <img src="{{ profile }}" class="profile_image" style="height:175px;width:175px;">
         </div>
         <div class="profile-text">
             <br>
@@ -61,86 +62,68 @@
             <br>
             <br>
         </div>      
-    </body>
 
-    <style>
-        .sidebar{
-            z-index: 1;
-            top: 0;
-            background: #30333b;
-            margin-top: 55px;
-            padding-top: 1px;
-            position: fixed;
-            left: 0;
-            width: 325px;
-            height: 100%;
-            transition: 0.5s;
-            transition-property: left;
-            overflow-y: auto;
-            }
-        
-        .text{
-            padding-top: 2em;
-            text-align: center;
-            background-color: #212121;
-            color: black;
-            }
+    {% endblock %}
 
-        .text h2{
-            padding-top: 2em;
-            padding-left: 1em;
-            position: absolute;
-            left: 400px;        
-            height: 120px;
-            text-align: left;      
-            }
-
-        .profile_info{
-            padding-top: 3em;   
-            display: flex;
-            flex-direction: column;
-            justify-content: left;  
-            align-items: center;
-            }
-
-        .profile-text{
+    {% block style %}
+        <style>
+            .sidebar{
+                z-index: 1;
+                top: 0;
+                background: #30333b;
+                margin-top: 55px;
+                padding-top: 1px;
+                position: fixed;
+                left: 0;
+                width: 325px;
+                height: 100%;
+                transition: 0.5s;
+                transition-property: left;
+                overflow-y: auto;
+                }
             
-            text-align: left;
-            padding-left: 1em;
-            justify-content: left;
-            color: #fff;  
-            }
+            .sidebar .profile_info{
+                padding-top: 3em;   
+                display: flex;
+                flex-direction: column;
+                justify-content: left;  
+                align-items: center;
+                }
 
-        .sidebar .profile_info .profile_image{
-            width: 100px;
-            height: 100px;
-            border-radius: 100px;
-            margin-bottom: 10px;
-            }
+            .sidebar .profile-text{
+                text-align: left;
+                padding-left: 1em;
+                justify-content: left;
+                color: #fff;  
+                }
 
-        .content{
+            .sidebar .profile_info .profile_image{
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+                margin-bottom: 10px;
+                }
+
+            .content{
+                width: (100% - 250px);
+                margin-top: 80px;
+                padding: 50px;
+                padding-left: 14em;
+                padding-right: 15em;
+                margin-left: 250px;
+                background-position: center;
+                background-size: cover;
+                height: 100vh;
+                transition: 0.5s;
+                }
             
-            width: (100% - 250px);
-            margin-top: 80px;
-            padding: 50px;
-            padding-left: 14em;
-            padding-right: 15em;
-            margin-left: 250px;
-            background: url(background.png) no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 100vh;
-            transition: 0.5s;
-            }
-        
-        .content .card {
-            text-align: left;
-            background: #fff;
-            padding: 25px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            opacity: 0.8;
-            }
-
-    </style>
-{% endblock %}   
+            .content .card {
+                text-align: left;
+                background: #fff;
+                padding: 25px;
+                margin-bottom: 10px;
+                font-size: 14px;
+                opacity: 0.8;
+                }
+        </style>
+    {% endblock %}   
