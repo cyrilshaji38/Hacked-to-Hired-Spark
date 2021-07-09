@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        
+
     {% endblock %}
 
     {% block content %}
@@ -29,7 +29,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <div style="text-align: center;" class="container">
+        <div style="text-align: center;" class="register">
             <form method="POST" class="form-register" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
                 <h2>SIGN UP</h2>
@@ -65,49 +65,5 @@
                 </div>
             </form>
         </div>
-
-    {% endblock %}
-    
-    {% block style %}
-
-        <style>
-            .container{          
-                
-                position: relative;
-                padding-top: 1em;
-                padding-bottom: 1em;
-                top:30px;
-                bottom: 30px;
-                left: 0;
-                right: 0;
-                margin: auto;
-                width: 400px;
-                background:white;
-                border-radius: 10px;
-            }
-
-            form.form-register{
-                position: relative;
-                border-bottom: 2px;
-                margin: 30px;
-                color: black;
-            }
-
-            .profile-pic{
-                text-align:left ;
-                color:#353535;            
-            }      
-            
-            .form-register input{
-                padding-top: 3em;
-                width: 100%;
-                padding: 0 5px;
-                height: 50px;
-                font-size: 16px;
-                border: none;
-                outline: none;
-                border-bottom: 1px solid silver;
-            }
-        </style>
 
     {% endblock %}

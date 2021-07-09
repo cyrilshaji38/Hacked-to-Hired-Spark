@@ -29,8 +29,8 @@
 
     {% block content %}
 
-        <div style="text-align: left; font-size:16px" class="container">
-            <form method="POST", action="" , class="assesment">
+        <div style="text-align: left; font-size:16px" class="assesment">
+            <form method="POST", action="" , class="form-assesment">
                 <h4>
                     Answer the following questions with a value ranging from 1 to 10 <br>
                     where 1 = "less likey to" and 10 = "more likely to" 
@@ -64,23 +64,4 @@
                 {{ form.submit(class="btn-lg  btn-primary") }}
             </form>
 
-    {% endblock %}
-        
-    {% block style %}
-
-        <style>
-            .container{
-                padding-top: 3em;
-                padding-bottom: 3em;
-                padding-left: 5em;
-                position: absolute;
-                top: 320px;
-                left:50%;
-                transform: translate(-50%,-50%);
-                width: 600x;
-                background:white;
-                border-radius: 10px;
-            }
-        </style>
-        
     {% endblock %}

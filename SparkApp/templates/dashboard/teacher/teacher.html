@@ -22,11 +22,16 @@
 
     {% block content %}
 
-        <h2>Welcome Teacher!</h2>
+        <div class="welcome">
+            <h2>Welcome Teacher!</h2>
+        </div>
+        <br>
+        <br>
+        <br>
         <div class="content">
             <div class="card">
                 <h3>Your students:</h3><br>
-                <form method="POST" class="form-signin">
+                <form method="POST" class="form-student-list">
                     {{ form.hidden_tag() }}
                     <script>i=0</script>
                     {% for students in my_students %}
@@ -64,66 +69,3 @@
         </div>      
 
     {% endblock %}
-
-    {% block style %}
-        <style>
-            .sidebar{
-                z-index: 1;
-                top: 0;
-                background: #30333b;
-                margin-top: 55px;
-                padding-top: 1px;
-                position: fixed;
-                left: 0;
-                width: 325px;
-                height: 100%;
-                transition: 0.5s;
-                transition-property: left;
-                overflow-y: auto;
-                }
-            
-            .sidebar .profile_info{
-                padding-top: 3em;   
-                display: flex;
-                flex-direction: column;
-                justify-content: left;  
-                align-items: center;
-                }
-
-            .sidebar .profile-text{
-                text-align: left;
-                padding-left: 1em;
-                justify-content: left;
-                color: #fff;  
-                }
-
-            .sidebar .profile_info .profile_image{
-                width: 100px;
-                height: 100px;
-                border-radius: 100px;
-                margin-bottom: 10px;
-                }
-
-            .content{
-                width: (100% - 250px);
-                margin-top: 80px;
-                padding: 50px;
-                padding-left: 14em;
-                padding-right: 15em;
-                margin-left: 250px;
-                background-position: center;
-                background-size: cover;
-                height: 100vh;
-                transition: 0.5s;
-                }
-            
-            .content .card {
-                text-align: left;
-                background: #fff;
-                padding: 25px;
-                margin-bottom: 10px;
-                font-size: 14px;
-                opacity: 0.8;
-                }
-        </style>
-    {% endblock %}   

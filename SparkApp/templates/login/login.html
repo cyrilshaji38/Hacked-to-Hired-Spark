@@ -26,8 +26,8 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <div style="text-align: center;"  class="container">
-            <form method="POST" class="form-signin">
+        <div style="text-align: center;"  class="login">
+            <form method="POST" class="form-login">
                 {{ form.hidden_tag() }}
                 <h2>SIGN IN</h2>
                 <br>
@@ -45,36 +45,3 @@
             </form>
         </div>
     {% endblock %}
-
-    {% block style %}
-        <style>
-            .container
-            {
-                padding-top: 1em;
-                position: absolute;
-                top: 300px;
-                left:50%;
-                transform: translate(-50%,-50%);
-                width: 350px;
-                background:white;
-                border-radius: 10px;
-                padding-bottom: 2em;
-            }
-
-            form.form-signin{
-                position: relative;
-                margin: 30px 0;
-            }
-
-            .form-signin input{
-                padding-top: 3em;
-                width: 100%;
-                padding: 0 5px;
-                height: 40px;
-                font-size: 16px;
-                border: none;
-                outline: none;
-                border-bottom: 1px solid silver;
-            }
-        </style>
-   {% endblock %}

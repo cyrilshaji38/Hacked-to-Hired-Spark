@@ -22,7 +22,12 @@
 
     {% block content %}
 
-        <h2>Welcome Student!</h2>
+        <div class="welcome">
+            <h2>Welcome Student!</h2>
+        </div>
+        <br>
+        <br>
+        <br>
         <div class="content">
             <div class="card">            
                 <a href="{{ url_for('assesment_page') }}">Take a test</a>
@@ -40,65 +45,3 @@
         </div>
 
     {% endblock %}
-
-    {% block style %}
-
-        <style>
-            .sidebar{
-                top: 0;
-                background: #30333b;
-                margin-top: 0px;
-                padding-top: 1px;
-                position: fixed;
-                left: 0;
-                width: 325px;
-                height: 100%;
-                transition: 0.5s;
-                transition-property: left;
-                overflow-y: auto;
-                z-index:100;
-            }
-                
-            .sidebar .profile_info{
-                padding-top: 7em;   
-                display: flex;
-                flex-direction: column;
-                justify-content: left;  
-                align-items: center;
-            }
-
-            .sidebar .profile_info .profile_image{
-                width: 150px;
-                height: 150px;
-                border-radius: 100px;
-                margin-bottom: 10px;
-            }
-
-            .sidebar .profile-text{
-                text-align: left;
-                padding-left: 1em;
-                justify-content: left;
-                color: #fff;  
-            }
-
-            .content{
-                width: (100% - 250px);
-                padding-right: 5em;
-                padding-left: 10em;
-                margin-left: 250px;
-                background-size: cover;
-                height: 100vh;
-                transition: 0.5s;
-            }
-
-            .content .card {
-                padding-top: 4em;
-                background: #fff;
-                padding: 25px;
-                margin-bottom: 10px;
-                font-size: 14px;
-                opacity: 0.8;
-            }
-        </style>
-        
-    {% endblock %}   
