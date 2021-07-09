@@ -11,11 +11,6 @@
 {% endblock %}
 {% block content %}
     <head>
-        <script type = "text/javascript" >  
-            function preventBack() { window.history.forward(); }  
-            setTimeout("preventBack()", 0);  
-            window.onunload = function () { null };  
-        </script>
         <title>Register</title> 
     </head>
     <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px" >
@@ -28,6 +23,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        
         <div style="text-align: center;" class="container">
             <form method="POST" class="form-register" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
@@ -72,10 +68,15 @@
           height: 200vh;
         }        
         .container{          
-            position: absolute;
-            top: 70%;
-            left:50%;
-            transform: translate(-50%,-50%);
+            
+            position: relative;
+            padding-top: 1em;
+            top:50px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+  	
+	margin: auto;
             width: 400px;
             background:white;
             border-radius: 10px;
