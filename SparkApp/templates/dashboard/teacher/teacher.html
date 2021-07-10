@@ -29,31 +29,49 @@
         <br>
         <br>
         <div class="content">
-            <div class="card">
-                <h3>Your students:</h3><br>
-                <form method="POST" class="form-student-list">
-                    {{ form.hidden_tag() }}
-                    <script>i=0</script>
-                    {% for students in my_students %}
-                        <script>i=i+1; document.write(i+")");</script>
-                        <a href="">{{ students.username }}</a><br><br>
-                    {% endfor %}
-                    <div style="font-size: 19px;">
-                        Add new student:
-                        {{ form.username(class="form-control-lg", placeholder="Student's username") }}
-                        {{ form.submit(class="btn-lg btn-primary") }}
-                    </div>               
-                    <br>
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                        {% if messages %}
-                            {% for category, message in messages %}
-                                <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                </form>  
+            <h3>Your students:</h3><br>
+            <form method="POST" class="form-student-list">
+                {{ form.hidden_tag() }}
+                <script>i=0</script>
+                {% for students in my_students %}
+                    <script>i=i+1; document.write(i+")");</script>
+                    <a href="">{{ students.username }}</a><br><br>
+                {% endfor %}
+                <div style="font-size: 19px;">
+                    Add new student:
+                    {{ form.username(class="form-control-lg", placeholder="Student's username") }}
+                    {{ form.submit(class="btn-lg btn-primary") }}
+                </div>               
+                <br>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </form>
+            <br>
+            <div>
+                <p style="font-size: 18px; color: #107bf7;" id="skills_menu" onclick="more_skills()"><u>All Games</u></p>
+                <ul id="skills_menu-box" style="display: block; list-style-type: none;" >
+                    <li>
+                        <p id="games_menu" style="color: #107bf7;" onclick="more_games()"><u>Critical Thinking</u></p>
+                        <ul id="games_menu-box" style="display: block; list-style-type: none;">
+                            <li>
+                                <a href="{{ url_for('communication_page') }}">Rainy Day</a>
+                            </li>
+                            <br>
+                        </ul>
+                        <p><u>Communication</u> (More games coming soon...)</p>
+                        <p><u>Creativity and Imagination</u> (More games coming soon...)</p>
+                        <p><u>Problem Solving</u> (More games coming soon...)</p>
+                        <p><u>Teamwork</u> (More games coming soon...)</p>
+                        <p><u>Adaptibility</u> (More games coming soon...)</p>
+                    </li>
+                </ul>
             </div>
         </div>        
         <div class="sidebar">
@@ -67,5 +85,30 @@
             <br>
             <br>
         </div>      
+
+    {% endblock %}
+
+    {% block script %}
+
+    <script>
+        function more_skills() {
+            var menuBox = document.getElementById('skills_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+        function more_games() {
+            var menuBox = document.getElementById('games_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+    </script>
 
     {% endblock %}
