@@ -1,45 +1,45 @@
 {% extends 'base.html' %}
-{% block buttons %}
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                {% if current_user.acctype == 1 %}                
-                    <a class="nav-link" href="{{ url_for('teacher_page') }}">HOME <span class="sr-only">(current)</span></a>
-                {% else %}
-                    <a class="nav-link" href="{{ url_for('student_page') }}">HOME <span class="sr-only">(current)</span></a>
-                {% endif %}            
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">            
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
-            </li>
-        </ul>
-    </div>
-{% endblock %}
-{% block content %}
-    <head>
-        <title>Game</title> 
-    </head>
-    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px;">
-        <br>
-        <h2>Game to improve communication skills</h2>
-        <br>
-            Our game for communication skills is still under development!<br>
-        <br>
-            Please enjoy the following game for critical thinking:
-        <br>
-        <br>
-        <iframe frameborder="0" src="https://itch.io/embed-upload/4115364?color=333333" allowfullscreen="" width="962" height="662"><a href="https://nikimathew.itch.io/critical-thinking">Play Critical Thinking on itch.io</a></iframe>
-    </body> 
-    <style>
-        body{          
-          background-color: #212121;
-          color: black;
-        }
-        .text-center{            
-            color: black;
-        }
 
-    </style>
-{% endblock %}
+    {% block head %}
+
+        <title>Communication</title>    
+
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    {% if current_user.acctype == 1 %}                
+                        <a class="nav-link" href="{{ url_for('teacher_page') }}">HOME <span class="sr-only">(current)</span></a>
+                    {% else %}
+                        <a class="nav-link" href="{{ url_for('student_page') }}">HOME <span class="sr-only">(current)</span></a>
+                    {% endif %}            
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <div style="text-align: center;">
+            <h2>Game to improve communication skills</h2>
+            <br>
+            Our game for communication skills is still under development!<br>
+            <br>
+            Please enjoy the following game for critical thinking:
+            <br>
+            <br>
+            <iframe frameborder="0" src="https://itch.io/embed-upload/4115364?color=333333" allowfullscreen="" width="962" height="662">
+                <a href="https://nikimathew.itch.io/critical-thinking">Play Critical Thinking on itch.io</a>
+            </iframe>
+        </div>
+        
+    {% endblock %}

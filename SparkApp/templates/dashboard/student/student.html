@@ -1,27 +1,33 @@
 {% extends 'base.html' %}
-{% block title %}
-    Student Login
-{% endblock %}
-{% block buttons %}
-    <div class="collapse navbar-collapse" id="navbarNav">   
-        <ul class="navbar-nav ml-auto">            
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
-            </li>
-        </ul>
-    </div>
-{% endblock %}
-{% block content %}
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block head %}
+
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">      
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
-    </head>
-    <body class="text" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px;">
-        <h2>
-            Welcome Student!
-        </h2>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Student</title>  
+
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">   
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <div class="welcome">
+            <h2>Welcome Student!</h2>
+        </div>
+        <br>
+        <br>
+        <br>
         <div class="content">
             <div class="card">            
                 <a href="{{ url_for('assesment_page') }}"><h5><u>Take a test</u></h5></a>
@@ -49,7 +55,7 @@
         </div>
         <div class="sidebar">
             <div class="profile_info">
-                <img src="{{ profile }}" class="mobile_profile_image" style="height:150px;width:150px;">
+                <img src="{{ profile }}" class="profile_image" style="height:175px;width:175px;">
             </div>
             <div class="profile-text">
                 <br>
@@ -57,102 +63,5 @@
                 Email id: {{ current_user.email }}
             </div>
         </div>
-    </body>
 
-    <script>
-        function more_skills() {
-            var menuBox = document.getElementById('skills_menu-box');    
-            if(menuBox.style.display == "block") {
-                menuBox.style.display = "none";
-            }
-            else {
-                menuBox.style.display = "block";
-            }
-        }
-        function more_games() {
-            var menuBox = document.getElementById('games_menu-box');    
-            if(menuBox.style.display == "block") {
-                menuBox.style.display = "none";
-            }
-            else {
-                menuBox.style.display = "block";
-            }
-        }
-    </script>
-            
-    <style>
-
-        .sidebar{
-            z-index: 1;
-            top: 0;
-            background: #30333b;
-            margin-top: 55px;
-            padding-top: 1px;
-            position: fixed;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            transition: 0.5s;
-            transition-property: left;
-            overflow-y: auto;
-        }
-            
-        .text{
-            text-align: left;
-            background-color: #212121;
-            color: black;
-            }
-        .text h2{
-            padding-top: 1em;
-            position: absolute;
-            left: 278px;        
-            height: 120px;
-            text-align: left;      
-
-        }
-
-        .profile_info{
-            padding-top: 3em;   
-            display: flex;
-            flex-direction: column;
-            justify-content: left;  
-            align-items: center;
-        }
-
-        .profile-text{
-            text-align: left;
-            padding-left: 1em;
-            justify-content: left;
-            color: #fff;  
-        }
-
-        .sidebar .profile_info .profile_image{
-        
-            width: 100px;
-            height: 100px;
-            border-radius: 100px;
-            margin-bottom: 10px;
-        }
-
-        .content{
-            width: (100% - 250px);
-            margin-top: 80px;
-            padding: 20px;
-            margin-left: 250px;
-            background: url(background.png) no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 100vh;
-            transition: 0.5s;
-        }
-
-        .content .card {
-            background: #fff;
-            padding: 25px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-    </style>
-{% endblock %}   
+    {% endblock %}
