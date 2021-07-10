@@ -11,15 +11,15 @@ from SparkApp.register.models import User
 @app.route("/teacher", methods=['GET','POST'])
 def teacher_page():
     if current_user.is_authenticated:
-        my_students = Students.query.filter_by(teacher=current_user.id) 
-        profile = url_for('static', filename='profile_pics/' + current_user.profile)
+        my_students = Students.query.filter_by(teacher=current_user.id)   # Students assigned to current user's account.
+        profile = url_for('static', filename='profile_pics/' + current_user.profile)   # Profile picture pulled from database.
         form4 = AddStudentForm()
         if form4.validate_on_submit():
-            if User.query.filter_by(username=form4.username.data).first():
-                if Students.query.filter_by(username=form4.username.data).first():
+            if User.query.filter_by(username=form4.username.data).first():   # Checks if entered student exists in User table.
+                if Students.query.filter_by(username=form4.username.data).first():   # Checks if entered student is already assigned to a teacher.
                     flash("Student already assigned to a teacher!", category='danger')
                 else:
-                    student_to_add = Students(username=form4.username.data,teacher=current_user.id)
+                    student_to_add = Students(username=form4.username.data,teacher=current_user.id)   # Adds student to Student table and assigns a teacher.
                     db.session.add(student_to_add)
                     db.session.commit()
             else:

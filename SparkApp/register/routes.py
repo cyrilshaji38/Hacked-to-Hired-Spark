@@ -9,12 +9,12 @@ from PIL import Image
 
 @app.route("/register",methods = ['GET','POST'])
 def register_page():
-    form2 = SignupForm()
+    form2 = SignupForm()   # Register form.
     if form2.validate_on_submit():
         if form2.profile.data:
-            picture_file = save_picture(form2.profile.data)
+            picture_file = save_picture(form2.profile.data)   # Profile picture uploaded by user.
         else:
-            picture_file = form2.profile.data
+            picture_file = form2.profile.data   # Gives a default profile picture if user has not uploaded one.
         user_to_create = User(
             username=form2.username.data,
             email=form2.email.data,
@@ -27,16 +27,16 @@ def register_page():
         db.session.commit()
         login_user(user_to_create)
         if(user_to_create.acctype == 1):
-            return redirect(url_for('teacher_page'))
+            return redirect(url_for('teacher_page'))   # Redirect to teacher dashboard.
         else:
-            return redirect(url_for('student_page'))
-    if form2.errors != {}:
+            return redirect(url_for('student_page'))   # Redirect to student dashboard.
+    if form2.errors != {}:   # Validation errors from the register form.
         for err_msg in form2.errors.values():
             flash(f'{err_msg}',category='danger')
     return render_template('register/register.html',form=form2) 
 
 
-def save_picture(form_picture):
+def save_picture(form_picture):   # Converts and saves uploaded profile picture into static folder.
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext

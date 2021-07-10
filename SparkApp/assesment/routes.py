@@ -7,8 +7,8 @@ from flask_login import current_user
 @app.route("/assesment",methods = ['GET','POST'])
 def assesment_page():
     if current_user.is_authenticated:
-        form3 = Answers()
-        form3.ans_list = [[form3.a1.data,form3.a2.data,form3.a3.data,form3.a4.data,form3.a5.data,form3.a6.data]]
+        form3 = Answers()   # Assesment page form.
+        form3.ans_list = [[form3.a1.data,form3.a2.data,form3.a3.data,form3.a4.data,form3.a5.data,form3.a6.data]]   # Student's answers.
         if form3.validate_on_submit():
             prediction = analyze_skill.lacking_skill(form3.ans_list)   # ML function returns the skill that the student lacks based on test answers.
             if(prediction == "Critical thinking "):
@@ -18,4 +18,3 @@ def assesment_page():
         return render_template('assesment/sample_assesment.html', form=form3)
     else:
         return redirect(url_for('login_page'))
-    
