@@ -29,28 +29,26 @@
         <br>
         <br>
         <div class="content">
-            <div class="card">            
-                <a href="{{ url_for('assesment_page') }}"><h5><u>Take a test</u></h5></a>
-                <br>
-                <div>
-                    <p style="font-size: 18px; color: #107bf7;" id="skills_menu" onclick="more_skills()"><u>All Games</u></p>
-                    <ul id="skills_menu-box" style="display: block; list-style-type: none;" >
-                        <li>
-                            <p id="games_menu" style="color: #107bf7;" onclick="more_games()"><u>Critical Thinking</u></p>
-                            <ul id="games_menu-box" style="display: block; list-style-type: none;">
-                                <li>
-                                    <a href="{{ url_for('communication_page') }}">Rainy Day</a>
-                                </li>
-                                <br>
-                            </ul>
-                            <p><u>Communication</u> (More games coming soon...)</p>
-                            <p><u>Creativity and Imagination</u> (More games coming soon...)</p>
-                            <p><u>Problem Solving</u> (More games coming soon...)</p>
-                            <p><u>Teamwork</u> (More games coming soon...)</p>
-                            <p><u>Adaptibility</u> (More games coming soon...)</p>
-                        </li>
-                    </ul>
-                </div>
+            <a href="{{ url_for('assesment_page') }}"><h5><u>Take a test</u></h5></a>
+            <br>
+            <div>
+                <p style="font-size: 18px; color: #107bf7;" id="skills_menu" onclick="more_skills()"><u>All Games</u></p>
+                <ul id="skills_menu-box" style="display: block; list-style-type: none;" >
+                    <li>
+                        <p id="games_menu" style="color: #107bf7;" onclick="more_games()"><u>Critical Thinking</u></p>
+                        <ul id="games_menu-box" style="display: block; list-style-type: none;">
+                            <li>
+                                <a href="{{ url_for('communication_page') }}">Rainy Day</a>
+                            </li>
+                            <br>
+                        </ul>
+                        <p><u>Communication</u> (More games coming soon...)</p>
+                        <p><u>Creativity and Imagination</u> (More games coming soon...)</p>
+                        <p><u>Problem Solving</u> (More games coming soon...)</p>
+                        <p><u>Teamwork</u> (More games coming soon...)</p>
+                        <p><u>Adaptibility</u> (More games coming soon...)</p>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="sidebar">
@@ -63,5 +61,30 @@
                 Email id: {{ current_user.email }}
             </div>
         </div>
+
+    {% endblock %}
+
+    {% block script %}
+
+    <script>
+        function more_skills() {
+            var menuBox = document.getElementById('skills_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+        function more_games() {
+            var menuBox = document.getElementById('games_menu-box');    
+            if(menuBox.style.display == "block") {
+                menuBox.style.display = "none";
+            }
+            else {
+                menuBox.style.display = "block";
+            }
+        }
+    </script>
 
     {% endblock %}
