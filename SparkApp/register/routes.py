@@ -36,7 +36,7 @@ def register_page():
     return render_template('register/register.html',form=form2) 
 
 
-def save_picture(form_picture):   # Converts and saves uploaded profile picture into static folder.
+def save_picture(form_picture):   # Saves uploaded profile picture into static folder.
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
