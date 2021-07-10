@@ -1,39 +1,67 @@
-<html>
-    <head>
-        <title>Test</title> 
-    </head>
-    <body style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px ">
-        <form method="POST", action="">
-            <h4>
-                Answer the following questions with a value ranging from 1 to 10 <br>
-                where 1 = "less likey to" and 10 = "more likely to" 
-            </h4>
-            {{ form.hidden_tag() }}
-            I am able to meet deadlines without rushing.&nbsp;
-            {{ form.a1(class="form-control") }}
-            <br>
-            <br>
-            How well can you evaluate a situation and identify the reason?&nbsp;
-            {{ form.a2(class="form-control") }}
-            <br>
-            <br>
-            I accept others statements and claims without questioning it.&nbsp;
-            {{ form.a3(class="form-control") }}
-            <br>
-            <br>
-            How well can you describe an event or situation?&nbsp;
-            {{ form.a4(class="form-control") }}
-            <br>
-            <br>
-            Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.&nbsp;
-            {{ form.a5(class="form-control") }}
-            <br>
-            <br>
-            I look for things in my environment to inspire me to find new interpretations of problems.&nbsp;
-            {{ form.a6(class="form-control") }}
-            <br>
-            <br>
-            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-        </form>
-    </body> 
-</html>
+{% extends 'base.html' %}
+
+    {% block head %}
+
+        <title>Assesment</title>    
+
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    {% if current_user.acctype == 1 %}                
+                    <a class="nav-link" href="{{ url_for('teacher_page') }}">HOME <span class="sr-only">(current)</span></a>
+                    {% else %}
+                    <a class="nav-link" href="{{ url_for('student_page') }}">HOME <span class="sr-only">(current)</span></a>
+                    {% endif %}            
+                </li>
+            </ul>        
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <div style="text-align: left; font-size:16px" class="assesment">
+            <form method="POST", action="" , class="form-assesment">
+                <h4>
+                    Answer the following questions with a value ranging from 1 to 10 <br>
+                    where 1 = "less likey to" and 10 = "more likely to" 
+                </h4>
+                <br>
+                {{ form.hidden_tag() }}
+                I am able to meet deadlines without rushing.&nbsp;
+                {{ form.a1(class="form-control-lg") }}
+                <br>
+                <br>
+                How well can you evaluate a situation and identify the reason?&nbsp;
+                {{ form.a2(class="form-control-lg") }}
+                <br>
+                <br>
+                I accept others statements and claims without questioning it.&nbsp;
+                {{ form.a3(class="form-control-lg") }}
+                <br>
+                <br>
+                How well can you describe an event or situation?&nbsp;
+                {{ form.a4(class="form-control-lg") }}
+                <br>
+                <br>
+                Before criticizing somebody, I try to imagine how I would feel if I were in his/her place.&nbsp;
+                {{ form.a5(class="form-control-lg") }}
+                <br>
+                <br>
+                I look for things in my environment to inspire me to find new interpretations of problems.&nbsp;
+                {{ form.a6(class="form-control-lg") }}
+                <br>
+                <br>
+                {{ form.submit(class="btn-lg  btn-primary") }}
+            </form>
+
+    {% endblock %}

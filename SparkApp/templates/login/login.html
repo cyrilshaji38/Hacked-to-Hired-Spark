@@ -1,8 +1,22 @@
-<html>
-    <head>
-        <title>Login</title> 
-    </head>
-    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
+{% extends 'base.html' %}
+
+    {% block head %}
+
+        <title>Login</title>
+
+    {% endblock %}
+
+    {% block buttons %}
+        <div class="collapse navbar-collapse" id="navbarNav">      
+            <ul class="navbar-nav ml-auto">        
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register_page') }}">REGISTER</a>
+                </li>
+            </ul>
+        </div>
+    {% endblock %}
+
+    {% block content %}
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -12,22 +26,22 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <div style="text-align: center;" class="container">
-            <form method="POST" class="form-signin">
+        <div style="text-align: center;"  class="login">
+            <form method="POST" class="form-login">
                 {{ form.hidden_tag() }}
-                <h1>SIGN IN</h1>
-                {{ form.username(class="form-control", placeholder="Username") }}
+                <h2>SIGN IN</h2>
+                <br>
+                {{ form.username(class="form-control-lg", placeholder="Username") }}
                 <br>
                 <br>
-                {{ form.password(class="form-control", placeholder="Password") }}
+                {{ form.password(class="form-control-lg", placeholder="Password") }}
                 <br>
                 <br>
-                <div class="checkbox mb-3">
+                <div>
                     Don't have an account? <a href="{{ url_for('register_page') }}">SIGN UP</a>
                 </div>
-                <br>
-                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                <br>               
+                    {{ form.submit(class="btn-lg  btn-primary") }}                
             </form>
         </div>
-    </body>
-</html>
+    {% endblock %}

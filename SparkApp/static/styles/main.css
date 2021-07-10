@@ -1,0 +1,155 @@
+.navbar-expand-md{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}
+
+.sidebar{
+    top: 0;
+    background: #30333b;
+    margin-top: 0px;
+    padding-top: 1px;
+    position: fixed;
+    left: 0;
+    width: 325px;
+    height: 100%;
+    transition: 0.5s;
+    transition-property: left;
+    overflow-y: auto;
+    z-index:100;
+}
+    
+.sidebar .profile_info{
+    padding-top: 7em;   
+    display: flex;
+    flex-direction: column;
+    justify-content: left;  
+    align-items: center;
+}
+
+.sidebar .profile_info .profile_image{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-text{
+    text-align: left;
+    padding-left: 1em;
+    justify-content: left;
+    color: #fff;  
+}
+
+body{
+    position:relative;
+    top: 70px;
+    background-color:rgb(196, 209, 209);
+    font-family:Verdana;
+}
+
+.welcome{
+    left: 350px;
+    position:absolute;
+}
+
+.assesment{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 5em;
+    position: absolute;
+    top: 320px;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 60em;
+    background:white;
+    border-radius: 10px;
+}
+
+.content{
+    width: (100% - 250px);
+    padding-right: 5em;
+    padding-left: 10em;
+    margin-left: 250px;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.card {
+    padding-top: 4em;
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.register{          
+                
+    position: relative;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    top:30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    background:white;
+    border-radius: 10px;
+}
+
+.form-register{
+    position: relative;
+    border-bottom: 2px;
+    margin: 30px;
+    color: black;
+}
+
+.profile-pic{
+    text-align:left ;
+    color:#353535;            
+}      
+
+.form-register input{
+    padding-top: 3em;
+    width: 100%;
+    padding: 0 5px;
+    height: 50px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid silver;
+}
+
+.login
+{
+    padding-top: 1em;
+    position: absolute;
+    top: 300px;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    background:white;
+    border-radius: 10px;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.form-login{
+    position: relative;
+    margin: 30px 0;
+}
+
+.form-login input{
+    padding-top: 3em;
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid silver;
+}

@@ -1,37 +1,71 @@
-<html>
-    <head>
-        <title>Welcome Teacher</title> 
-    </head>
-    <body class="text-center" style="background-color:rgb(196, 209, 209);font-family:Verdana; font-size:16px">
-        <a href="{{ url_for('logout') }}"><h4 style="text-align:right;">SIGN OUT</h4></a>
-        <h1>Welcome Teacher!</h1>
-        <img src="{{ profile }}">
+{% extends 'base.html' %}
+
+    {% block head %}
+    
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">      
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Teacher</title>          
+
+    {% endblock %}
+
+    {% block buttons %}
+
+        <div class="collapse navbar-collapse" id="navbarNav">    
+            <ul class="navbar-nav ml-auto">            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">SIGN OUT</a>
+                </li>
+            </ul>
+        </div>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <div class="welcome">
+            <h2>Welcome Teacher!</h2>
+        </div>
         <br>
-        Username: {{ current_user.username }}
-        <br>
-        Email id: {{ current_user.email }}
         <br>
         <br>
-        <form method="POST" class="form-signin">
-            {{ form.hidden_tag() }}
-            <h2>Your students:</h2>
-            <script>i=0</script>
-            {% for students in my_students %}
-                <script>i=i+1; document.write(i+")");</script>
-                <a href="">{{ students.username }}</a><br><br>
-            {% endfor %}
-            <b>Add new student: </b>
-            {{ form.username(class="form-control", placeholder="Student's username") }}
-            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
-                            {{ message }}
-                        </div>
+        <div class="content">
+            <div class="card">
+                <h3>Your students:</h3><br>
+                <form method="POST" class="form-student-list">
+                    {{ form.hidden_tag() }}
+                    <script>i=0</script>
+                    {% for students in my_students %}
+                        <script>i=i+1; document.write(i+")");</script>
+                        <a href="">{{ students.username }}</a><br><br>
                     {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </form>
-    </body>
-</html>
+                    <div style="font-size: 19px;">
+                        Add new student:
+                        {{ form.username(class="form-control-lg", placeholder="Student's username") }}
+                        {{ form.submit(class="btn-lg btn-primary") }}
+                    </div>               
+                    <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }}" style="color:rgb(252, 2, 2); font-size:16px">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </form>  
+            </div>
+        </div>        
+        <div class="sidebar">
+            <div class="profile_info">
+            <img src="{{ profile }}" class="profile_image" style="height:175px;width:175px;">
+        </div>
+        <div class="profile-text">
+            <br>
+            Username: {{ current_user.username }}<br>
+            Email id: {{ current_user.email }}
+            <br>
+            <br>
+        </div>      
+
+    {% endblock %}
