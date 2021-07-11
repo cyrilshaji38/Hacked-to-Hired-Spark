@@ -5,8 +5,15 @@ Welcome to project Spark! A gamified platform that helps students develop their 
 1. Cyril Shaji [https://github.com/cyrilshaji38]
 2. Nikita Mathew [https://github.com/nikitamathewk]
 
-## Link to product walkthrough
+## Presentations
+Approach Doc: [https://drive.google.com/file/d/1-_EJTwfkkmF8-HqlAbjfXdu4E75sg76V/view?usp=sharing]
+Final Pitch: [https://drive.google.com/file/d/1TLDSMqBUXAjlro07QZpKHkJ33d9pI0JB/view?usp=sharing]
+
+## Demo Video
 [https://www.youtube.com/watch?v=e7csLhRWnJo&ab_channel=CyrilShaji]
+
+## Our webapp
+[http://cyrilshaji38.pythonanywhere.com/]
 
 ## How it Works ?
 1. Students and teachers can make an account on our web app after paying a small subscription fee of $2. 
