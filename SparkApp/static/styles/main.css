@@ -68,22 +68,19 @@ body{
 }
 
 .content{
-    width: (100% - 250px);
-    padding-right: 5em;
-    padding-left: 10em;
-    margin-left: 250px;
+    width: 550px;
     background-size: cover;
-    height: 100vh;
+    height: 95vh;
     transition: 0.5s;
-}
-
-.card {
-    padding-top: 4em;
     background: #fff;
-    padding: 25px;
-    margin-bottom: 10px;
     font-size: 14px;
     opacity: 0.8;
+    left: 400px;
+    position:absolute;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .register{          

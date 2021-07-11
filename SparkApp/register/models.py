@@ -30,10 +30,10 @@ class User(db.Model, UserMixin):   # Table in database with all registered user'
         return bcrypt.check_password_hash(self.password, attempted_password)
 
 
-class Students(db.Model):
+class Students(db.Model):   # Table in database that stores all students and their assigned teachers.
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(length=30), nullable=True, unique=True)
-    teacher = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    teacher = db.Column(db.Integer(), db.ForeignKey('user.id'))   # Assigned teacher's unique user id number.
     
     def __repr__(self):
         return f'Students {self.username}'

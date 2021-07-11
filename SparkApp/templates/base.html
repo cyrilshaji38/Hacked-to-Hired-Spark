@@ -15,7 +15,7 @@
 
    <body>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-         <a class="navbar-brand" href="{{url_for('logout')}}">SPARK</a>
+         <a class="navbar-brand" href="{{url_for('logout')}}" style="font-family: Brush Script MT;">SPARK</a>
          
          {% block buttons %}
             <!-- Buttons for nav bar -->
@@ -28,5 +28,9 @@
       {% endblock %}
 
    </body>
+
+   {% block script %}
+         <!-- Future Scripts here -->
+   {% endblock %}
 
 </html>
