@@ -6,7 +6,7 @@ Welcome to project Spark! A gamified platform that helps students develop their 
 2. Nikita Mathew [https://github.com/nikitamathewk]
 
 ## Link to product walkthrough
-[https://youtu.be/AnC1RvV99OI]
+[https://www.youtube.com/watch?v=e7csLhRWnJo&ab_channel=CyrilShaji]
 
 ## How it Works ?
 1. Students and teachers can make an account on our web app after paying a small subscription fee of $2. 

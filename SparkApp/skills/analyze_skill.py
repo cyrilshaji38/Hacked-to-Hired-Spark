@@ -21,8 +21,8 @@ def lacking_skill(wb):
     rgb_pred = rbg_alg.predict(test_X)   # We pass the testing data to the stored algorithm to predict the outcome.
     rgb_accuracy = accuracy_score(test_y, rgb_pred)
     rgb_f1 = f1_score(test_y, rgb_pred, average='weighted')
-    print('Accuracy (rbf Kernel): ', "%.2f" % (rgb_accuracy*100))   # We check the accuracy of the algorithm.
-    print('F1 (rbf Kernel): ', "%.2f" % (rgb_f1*100))
+    accuracy = ('Accuracy (rbf Kernel): ', "%.2f" % (rgb_accuracy*100))   # We check the accuracy of the algorithm.
+    # print('F1 (rbf Kernel): ', "%.2f" % (rgb_f1*100))
    
     final = pd.DataFrame(wb)
     prediction =rbg_alg.predict(final)[0]   # Output predicted using wb as input.

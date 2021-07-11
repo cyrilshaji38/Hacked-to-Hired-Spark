@@ -61,7 +61,7 @@
                         <p id="games_menu" style="color: #107bf7;" onclick="more_games()"><u>Critical Thinking</u></p>
                         <ul id="games_menu-box" style="display: block; list-style-type: none;">
                             <li>
-                                <a href="{{ url_for('communication_page') }}">Rainy Day</a>
+                                <a href="{{ url_for('critical_thinking_page') }}">Rainy Day</a>
                             </li>
                             <br>
                         </ul>
@@ -91,22 +91,25 @@
     {% block script %}
 
     <script>
+        var menuBox1 = document.getElementById('skills_menu-box');
+        window.onload = menuBox1.style.display = "none";
+        var menuBox2 = document.getElementById('games_menu-box');
+        window.onload = menuBox2.style.display = "none";
+
         function more_skills() {
-            var menuBox = document.getElementById('skills_menu-box');    
-            if(menuBox.style.display == "block") {
-                menuBox.style.display = "none";
+            if(menuBox1.style.display == "block") {
+                menuBox1.style.display = "none";
             }
             else {
-                menuBox.style.display = "block";
+                menuBox1.style.display = "block";
             }
         }
         function more_games() {
-            var menuBox = document.getElementById('games_menu-box');    
-            if(menuBox.style.display == "block") {
-                menuBox.style.display = "none";
+            if(menuBox2.style.display == "block") {
+                menuBox2.style.display = "none";
             }
             else {
-                menuBox.style.display = "block";
+                menuBox2.style.display = "block";
             }
         }
     </script>
