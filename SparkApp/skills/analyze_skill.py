@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split   # To split the dataset for training and testing.
 from sklearn import svm   # For suport vector machine algorithm.
 from sklearn import metrics   # For checking the model accuracy.
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 
 def lacking_skill(wb):
     hb = pd.read_csv(r"SparkApp/skills/train_data.csv")
@@ -14,14 +16,14 @@ def lacking_skill(wb):
     test_X = test[['Time Management', 'Evaluating', 'Questioning', 'Describing', 'Empathy', 'Creativity ']]
     test_y = test.skill
 
-    model = svm.SVC()   # Select the svm algorithm
-    
-    model.fit(train_X, train_y)   # We train the algorithm with training data and training output.
-    
-    prediction = model.predict(test_X)   # We pass the testing data to the stored algorithm to predict the outcome.
-
-    print('The accuracy of the SVM is: ', metrics.accuracy_score(prediction, test_y))   # We check the accuracy of the algorithm.
-
+    # Select the svm algorithm and train the algorithm with training data and training output.
+    rbg_alg = svm.SVC(kernel='rbf', C=1).fit(train_X, train_y)
+    rgb_pred = rbg_alg.predict(test_X)   # We pass the testing data to the stored algorithm to predict the outcome.
+    rgb_accuracy = accuracy_score(test_y, rgb_pred)
+    rgb_f1 = f1_score(test_y, rgb_pred, average='weighted')
+    print('Accuracy (rbf Kernel): ', "%.2f" % (rgb_accuracy*100))   # We check the accuracy of the algorithm.
+    print('F1 (rbf Kernel): ', "%.2f" % (rgb_f1*100))
+   
     final = pd.DataFrame(wb)
-    prediction = model.predict(final)[0]   # Output predicted using wb as input.
+    prediction =rbg_alg.predict(final)[0]   # Output predicted using wb as input.
     return prediction
